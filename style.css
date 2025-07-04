@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #808080;
+  padding: 1rem;
+}
+
+#start-btn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #fcd34d, #fbbf24);
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+#start-btn:hover {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.flipbook,
+.imgBoard {
+  width: 684px;
+  height: 492px;
+}
+
+/* 하드 커버 스타일 */
+.flipbook .hard {
+  background-color: red !important;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+.flipbook .hard small {
+  font-style: italic;
+  font-weight: lighter;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* 내부 페이지 */
+.flipbook .page {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.page img {
+  width: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.flipbook .page small {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* 📱 모바일 대응 미디어 쿼리 */
+@media (max-width: 768px) {
+  .flipbook,
+  .imgBoard {
+    width: 90vw;
+    height: calc(90vw * 0.72); /* 684x492 비율 유지 */
+  }
+
+  #start-btn {
+    top: 95%;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .flipbook .page small,
+  .flipbook .hard small {
+    font-size: 12px;
+  }
+
+  .flipbook .page {
+    gap: 5px;
+  }
+}
